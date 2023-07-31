@@ -48,3 +48,8 @@ if __name__ == "__main__":
             roll(1000, 1000, "D1000")
             Play_again = input("Play again? (y/n): ")
             on = Play_again.lower() == "y"
+
+
+
+
+
