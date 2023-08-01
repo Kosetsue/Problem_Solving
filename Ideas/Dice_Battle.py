@@ -18,6 +18,7 @@ def roll(a, dice_type):
 
 
 # ----------------------------------------------------------------------
+# sourcery skip: assign-if-exp, boolean-if-exp-identity, remove-unnecessary-cast
 if __name__ == "__main__":
     while on:
         Name_1 = input("What is your name:  ")
@@ -26,25 +27,31 @@ if __name__ == "__main__":
         print(f"\n\nHello {Name_1} and {Name_2} And Welcome to Dice battles!!!")
         print("\n\nPICK YOUR DICE TYPE!\n", *Dice_Types, sep="\n")
 
-        Roll = input("\n\nWhat are you rolling: ")
+        while Name_1 and Name_2:
+            Roll = input("\n\nWhat are you rolling: ")
+            if Roll not in Dice_Types:
+                print("Invalid Dice Type")
 
-        if Roll == "D10":
-            roll(10, "D10")
+            elif Roll == "D10":
+                roll(10, "D10")
 
-            Play_again = input("Play again? (y/n): ")
-            on = Play_again.lower() == "y"
+                Play_again = input("Play again? (y/n): ")
+                if Play_again.lower() == "y":
+                    on = True
+                else:
+                    on = False
 
-        if Roll == "D20":
-            roll(20, "D20")
-            Play_again = input("Play again? (y/n): ")
-            on = Play_again.lower() == "y"
+            elif Roll == "D20":
+                roll(20, "D20")
+                Play_again = input("Play again? (y/n): ")
+                on = Play_again.lower() == "y"
 
-        if Roll == "D100":
-            roll(100, "D100")
-            Play_again = input("Play again? (y/n): ")
-            on = Play_again.lower() == "y"
+            elif Roll == "D100":
+                roll(100, "D100")
+                Play_again = input("Play again? (y/n): ")
+                on = Play_again.lower() == "y"
 
-        if Roll == "D1000":
-            roll(1000, "D1000")
-            Play_again = input("Play again? (y/n): ")
-            on = Play_again.lower() == "y"
+            elif Roll == "D1000":
+                roll(1000, "D1000")
+                Play_again = input("Play again? (y/n): ")
+                on = Play_again.lower() == "y"
