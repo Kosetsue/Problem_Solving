@@ -29,29 +29,30 @@ if __name__ == "__main__":
 
         while Name_1 and Name_2:
             Roll = input("\n\nWhat are you rolling: ")
-            if Roll not in Dice_Types:
+            if Roll in Dice_Types:
+                if Roll == "D10":
+                    roll(10, "D10")
+
+                    Play_again = input("Play again? (y/n): ")
+                    if Play_again.lower() == "y":
+                        on = True
+                    else:
+                        on = False
+
+                elif Roll == "D20":
+                    roll(20, "D20")
+                    Play_again = input("Play again? (y/n): ")
+                    on = Play_again.lower() == "y"
+
+                elif Roll == "D100":
+                    roll(100, "D100")
+                    Play_again = input("Play again? (y/n): ")
+                    on = Play_again.lower() == "y"
+
+                elif Roll == "D1000":
+                    roll(1000, "D1000")
+                    Play_again = input("Play again? (y/n): ")
+                    on = Play_again.lower() == "y"
+
+            else:
                 print("Invalid Dice Type")
-
-            elif Roll == "D10":
-                roll(10, "D10")
-
-                Play_again = input("Play again? (y/n): ")
-                if Play_again.lower() == "y":
-                    on = True
-                else:
-                    on = False
-
-            elif Roll == "D20":
-                roll(20, "D20")
-                Play_again = input("Play again? (y/n): ")
-                on = Play_again.lower() == "y"
-
-            elif Roll == "D100":
-                roll(100, "D100")
-                Play_again = input("Play again? (y/n): ")
-                on = Play_again.lower() == "y"
-
-            elif Roll == "D1000":
-                roll(1000, "D1000")
-                Play_again = input("Play again? (y/n): ")
-                on = Play_again.lower() == "y"
