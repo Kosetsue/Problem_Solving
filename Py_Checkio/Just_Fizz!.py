@@ -3,6 +3,3 @@ def checkio(num: int) -> str:
 
 
 print(checkio(9))
-
-
-print(9 % 3)
