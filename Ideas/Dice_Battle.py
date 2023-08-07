@@ -27,32 +27,52 @@ if __name__ == "__main__":
         print(f"\n\nHello {Name_1} and {Name_2} And Welcome to Dice battles!!!")
         print("\n\nPICK YOUR DICE TYPE!\n", *Dice_Types, sep="\n")
 
+        Roll = ""
         while Name_1 and Name_2:
             Roll = input("\n\nWhat are you rolling: ")
-            if Roll in Dice_Types:
-                if Roll == "D10":
-                    roll(10, "D10")
+            if roll not in Dice_Types:
+                print("Invalid Dice Type!")
 
-                    Play_again = input("Play again? (y/n): ")
-                    if Play_again.lower() == "y":
-                        on = True
-                    else:
-                        on = False
+            if Roll == "D10":
+                roll(10, "D10")
+                Play_again = input("Play again? (y/n): ")
+                if Play_again.lower() == "y":
+                    on = True
+                    continue
+                else:
+                    print(f"\n\nThanks for playing {Name_1} and {Name_2}!")
+                    on = False
+                    break
 
-                elif Roll == "D20":
-                    roll(20, "D20")
-                    Play_again = input("Play again? (y/n): ")
-                    on = Play_again.lower() == "y"
+            elif Roll == "D20":
+                roll(20, "D20")
+                Play_again = input("Play again? (y/n): ")
+                if Play_again.lower() == "y":
+                    on = True
+                    continue
+                else:
+                    print(f"\n\nThanks for playing {Name_1} and {Name_2}!")
+                    on = False
+                    break
 
-                elif Roll == "D100":
-                    roll(100, "D100")
-                    Play_again = input("Play again? (y/n): ")
-                    on = Play_again.lower() == "y"
+            elif Roll == "D100":
+                roll(100, "D100")
+                Play_again = input("Play again? (y/n): ")
+                if Play_again.lower() == "y":
+                    on = True
+                    continue
+                else:
+                    print(f"\n\nThanks for playing {Name_1} and {Name_2}!")
+                    on = False
+                    break
 
-                elif Roll == "D1000":
-                    roll(1000, "D1000")
-                    Play_again = input("Play again? (y/n): ")
-                    on = Play_again.lower() == "y"
-
-            else:
-                print("Invalid Dice Type")
+            elif Roll == "D1000":
+                roll(1000, "D1000")
+                Play_again = input("Play again? (y/n): ")
+                if Play_again.lower() == "y":
+                    on = True
+                    continue
+                else:
+                    print(f"\n\nThanks for playing {Name_1} and {Name_2}!")
+                    on = False
+                    break
