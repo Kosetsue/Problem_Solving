@@ -18,7 +18,6 @@ def roll(a, dice_type):
 
 
 # ----------------------------------------------------------------------
-# sourcery skip: assign-if-exp, boolean-if-exp-identity, remove-unnecessary-cast
 if __name__ == "__main__":
     while on:
         Name_1 = input("What is your name:  ")
